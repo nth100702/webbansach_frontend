@@ -48,7 +48,7 @@ function DanhSachSanPham({tuKhoaTimKiem,maTheLoai}: DanhSachSanPhamProps){
             }
         );
     }
-    }, [trangHienTai, tuKhoaTimKiem,maTheLoai] // Chi goi mot lan
+    }, [trangHienTai, tuKhoaTimKiem,maTheLoai] 
     )
 
     const phanTrang = (trang: number) => {

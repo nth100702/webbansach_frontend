@@ -20,7 +20,7 @@ const Carousel: React.FC=()=> {
                 setBaoLoi(error.message);
             }
         );
-    }, [] // Chi goi mot lan
+    }, [] 
     )
 
     if (dangTaiDuLieu) {

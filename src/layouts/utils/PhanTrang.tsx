@@ -18,21 +18,21 @@ const danhSachTrang = [];
             danhSachTrang.push(props.trangHienTai + 2);
         }
     } else if (props.trangHienTai > 1) {
-        // trang -2
+
         if (props.trangHienTai >= 3) {
             danhSachTrang.push(props.trangHienTai - 2);
         }
-        // trang -1
+
         if (props.trangHienTai >= 2) {
             danhSachTrang.push(props.trangHienTai - 1);
         }
-        // ban than no
+
         danhSachTrang.push(props.trangHienTai);
-        // trang + 1
+
         if (props.tongSoTrang >= props.trangHienTai + 1) {
             danhSachTrang.push(props.trangHienTai + 1);
         }
-        // trang + 2
+
         if (props.tongSoTrang >= props.trangHienTai + 2) {
             danhSachTrang.push(props.trangHienTai + 2);
         }

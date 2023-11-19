@@ -30,7 +30,7 @@ const SachProps: React.FC<SachPropsInterface> = (props) => {
                 setBaoLoi(error.message);
             }
         );
-    }, [] // Chi goi mot lan
+    }, []
     )
 
     if (dangTaiDuLieu) {

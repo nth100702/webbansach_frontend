@@ -4,10 +4,9 @@ import { my_request } from "./Request";
 
 async function layDanhGiaCuaMotSach(duongDan:string): Promise<DanhGiaModel[]> {
     const ketQua: DanhGiaModel[] = [];
-    // Gọi phương thức request
+
     const response = await my_request(duongDan);
 
-    // Lấy ra json anh
     const responseData = response._embedded.suDanhGias;
 
     for (const key in responseData) {
@@ -24,14 +23,12 @@ async function layDanhGiaCuaMotSach(duongDan:string): Promise<DanhGiaModel[]> {
 
 export async function layToanBoDanhGiaCuaMotSach(maSach: number): Promise<DanhGiaModel[]> {
 
-    // Xác định endpoint
     const duongDan: string = `http://localhost:8080/sach/${maSach}/danhSachDanhGia`;
     return layDanhGiaCuaMotSach(duongDan);
     
 }
 export async function lay1AnhCuaMotSach(maSach: number): Promise<DanhGiaModel[]> {
 
-    // Xác định endpoint
     const duongDan: string = `http://localhost:8080/sach/${maSach}/danhSachDanhGia?sort=maDanhGia,asc&page=0&size=1`;
     return layDanhGiaCuaMotSach(duongDan);
     

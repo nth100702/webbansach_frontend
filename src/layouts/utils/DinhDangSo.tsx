@@ -5,7 +5,6 @@ function dinhDangSo(x:number|undefined){
     if(isNaN(x)){
         return 0;
     }
-    // toLocaleString để định dạng số
     return x.toLocaleString("vi-VN");
 }
 export default dinhDangSo;

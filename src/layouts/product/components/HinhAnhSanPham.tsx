@@ -30,7 +30,7 @@ const HinhAnhSanPham: React.FC<HinhAnhSanPham> = (props) => {
                 setBaoLoi(error.message);
             }
         );
-    }, [] // Chi goi mot lan
+    }, [] 
     )
     if (dangTaiDuLieu) {
         return (

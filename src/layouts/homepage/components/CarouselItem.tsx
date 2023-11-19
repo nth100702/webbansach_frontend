@@ -27,7 +27,7 @@ const CarouselItem: React.FC<CarouselItemInterface> = (props) => {
                 setBaoLoi(error.message);
             }
         );
-    }, [] // Chi goi mot lan
+    }, [] 
     )
 
     if (dangTaiDuLieu) {

@@ -13,11 +13,9 @@ async function laySach(duongDan: string): Promise<KetQuaInterface>{
      // Gọi phương thức request
      const response = await my_request(duongDan);
 
-     // Lấy ra json sach
      const responseData = response._embedded.saches;
      console.log(responseData);
     
-     // lấy thông tin trang
     const tongSoTrang:number = response.page.totalPages;
     const tongSoSach: number = response.page.totalElements;
 
@@ -39,21 +37,18 @@ async function laySach(duongDan: string): Promise<KetQuaInterface>{
 
 export async function layToanBoSach(trang: number): Promise<KetQuaInterface> {
 
-    // Xác định endpoint
     const duongDan: string = `http://localhost:8080/sach?sort=maSach,desc&size=8&page=${trang}`;
     return laySach(duongDan);
    
 }
 export async function lay3SachMoiNhat():Promise<KetQuaInterface> {
     
-    // Xác định endpoint
     const duongDan: string = 'http://localhost:8080/sach?sort=maSach,desc&page=0&size=3';
     return laySach(duongDan);
 }
 
 export async function timKiemSach(tuKhoaTimKiem: string, maTheLoai:number):Promise<KetQuaInterface> {
-    
-    // Xác định endpoint
+
     let duongDan: string = 'http://localhost:8080/sach?sort=maSach,desc&page=0&size=8&page=0';
     if(tuKhoaTimKiem !==''&& maTheLoai==0){
         duongDan=`http://localhost:8080/sach/search/findByTenSachContaining?sort=maSach,desc&size=8&page=0&tenSach=${tuKhoaTimKiem}`

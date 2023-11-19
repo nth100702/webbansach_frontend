@@ -26,13 +26,11 @@ function DanKyNguoiDung(){
         // Tránh click liên tục
         e.preventDefault();
 
-        // Kiểm tra các điều kiện và gán kết quả vào biến
         const isTenDangNhapValid = !await kiemTraTenDangNhapDaTonTai(tenDangNhap);
         const isEmailValid = !await kiemTraEmailTonTai(email);
         const isMatKhauValid = !kiemTraMatKhau(matKhau);
         const isMatKhauLapLaiValid = !kiemTraMatKhauLapLai(matKhauLapLai);
 
-        // Kiểm tra tất cả các điều kiện
         if (isTenDangNhapValid && isEmailValid && isMatKhauValid && isMatKhauLapLaiValid) {
             try {
                 const url = 'http://localhost:8080/tai-khoan/dang-ky';
@@ -118,21 +116,17 @@ function DanKyNguoiDung(){
             setErrorMatKhau("Mật khẩu phải có ít nhất 8 ký tự và bao gồm ít nhất 1 ký tự đặc biệt (!@#$%^&*)");
             return true;
         } else {
-            setErrorMatKhau(""); // Mật khẩu hợp lệ
+            setErrorMatKhau(""); 
             return false;
         }
     }
 
     const handleMatKhauChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        // Thay đổi giá trị
+
         setMatKhau(e.target.value);
-        // Kiểm tra
         setErrorMatKhau('');
-        // Kiểm tra sự tồn tại
         return kiemTraMatKhau(e.target.value);
     }
-
-    ///////////////////////////////////////////////////////////////////////////////
 
     // KIỂM TRA MẬT KHẨU LẶP LẠI ////////////////////////////////////////////////
     const kiemTraMatKhauLapLai = (matKhauLapLai: string) => {
